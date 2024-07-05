@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141;color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="japan"
+                    src="https://imgs.search.brave.com/ENrOC44wBZxhfLjtaZgUHyZZM-CApbjY8aqHIjIYGKA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c3RhdGUuZ292L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE5LzA0/L0phcGFuLTIxMDd4/MTQwNi5qcGc"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://imgs.search.brave.com/gP7plYMjZJCNIi6SBlxbRPhBp2H_lKJ9PCF_skYNcys/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzc4LzI3LzI3/LzM2MF9GXzc4Mjcy/NzMwX1VnSVJibXBh/akEyYnpyazJndzFZ/Tjh0cWxKSDZoUFgx/LmpwZw"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://imgs.search.brave.com/Ip3XfkZ5tWCxwyB8ZXeL6GacEKtVaP4jdPfQzIp0Orc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjA0/MzMzMTA4L3Bob3Rv/L2xpdHRsZS1vd2wu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTRQal9JNHRmSmJD/ZVhKbkdFN0piX2w4/MWg4TGNPVFVFWTFf/N0dGNGZMY1U9"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://imgs.search.brave.com/XKoRV5cBP_C24o-JIfhh1pH6JLTbLoZE0GGSFkg1lFA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/NDYzMDUxL3Bob3Rv/L2NoaWxkcy1wcmF5/ZXIuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPWhZTEd5dDJB/X3dzZWpjcS1Ybk13/X3NVYjNkVDhKRTVD/QVVCRUZ1VGdRS2s9"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById("owl").onclick = function () {
+    //     alert('owl clicked')
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("image").addEventListener('click', function (e) {
+    //     console.log('clicked inside the ul');
+    // }, false)
+
+    // document.getElementById("owl").addEventListener('click', function (e) {
+    //     console.log('owl clicked');
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function (e) {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log('google clicked');
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // removeIt.parentNode.removeChild(removeIt)
+    })
+</script>
+</html>
